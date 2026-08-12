@@ -131,27 +131,48 @@
             transition: transform 0.2s;
         }
 
-        .whatsapp-btn:active {
-            transform: scale(0.98);
-        }
-
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
+            gap: 12px;
             margin-top: 15px;
         }
 
         .gallery-item {
+            position: relative;
             background-color: var(--card-bg);
             border-radius: 8px;
-            height: 120px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px dashed #444;
-            color: var(--text-muted);
-            font-size: 0.8rem;
+            height: 160px;
+            overflow: hidden;
+            border: 1px solid #282828;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(0deg, rgba(13,13,13,0.9) 0%, rgba(13,13,13,0) 100%);
+            padding: 8px;
+        }
+
+        .gallery-overlay span {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.85rem;
+            color: var(--gold);
+            font-weight: 600;
+            display: block;
+        }
+
+        .gallery-overlay p {
+            font-size: 0.7rem;
+            color: var(--text-light);
         }
 
         footer {
@@ -207,15 +228,6 @@
             <div class="service-price">₹XXX</div>
         </div>
 
-        <div class="service-card">
-            <div class="service-info">
-                <h3>Olaplex Spa & Repair</h3>
-                <p>Intensive bond rebuilding for colored/bleached hair</p>
-            </div>
-            <div class="service-price">₹XXX</div>
-        </div>
-
-
         <!-- Cut & Styling -->
         <h2 class="section-title">Hair Cut & Styling</h2>
 
@@ -235,13 +247,6 @@
             <div class="service-price">₹XXX</div>
         </div>
 
-        <div class="service-card">
-            <div class="service-info">
-                <h3>Global Hair Color / Highlights</h3>
-                <p>Balayage, Ombre, or Full Cover with premium products</p>
-            </div>
-            <div class="service-price">₹XXX</div>
-        </div>
         <!-- Sample Work / Gallery -->
         <h2 class="section-title">Recent Transformations</h2>
         <div class="gallery-grid">
@@ -274,8 +279,6 @@
                 </div>
             </div>
         </div>
-        
-        
 
     </div>
 
@@ -292,5 +295,4 @@
     </footer>
 
 </body>
-              </html>
-              
+</html>
